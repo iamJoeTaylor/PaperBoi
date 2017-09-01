@@ -7,27 +7,32 @@ public class BagContents : MonoBehaviour {
 	public Vector3 offset;
 	public Vector3 newsPaperOffset;
 
+	private Vector3 headStart;
+
 	// Use this for initialization
 	void Start () {
-		setPosition ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		if (headStart == null) {
+			print (head.transform.position.x);
+			headStart = head.transform.localPosition;
+		}
 		setPosition ();
 	}
 
 	void setPosition() {
 		GameObject[] newsPapersInBag = GameObject.FindGameObjectsWithTag("NewsPaperInBag");
 		Vector3 newPosition = new Vector3 (
-			head.transform.position.x + offset.x,
-			offset.y + (head.transform.position.y/2),
-			head.transform.position.z + offset.z
+			headStart.x + offset.x,
+			offset.y + (head.transform.localPosition.y/2),
+			headStart.z + offset.z
 		);
-		gameObject.transform.position = newPosition;
+		gameObject.transform.localPosition = newPosition;
 		foreach (GameObject newsPaperInBag in newsPapersInBag) {
 			if (newsPaperInBag.GetComponent<VRTK.VRTK_InteractableObject> ().IsGrabbed() == false) {
-				newsPaperInBag.transform.position = newPosition + newsPaperOffset;
+				newsPaperInBag.transform.localPosition = gameObject.transform.position + newsPaperOffset;
 			}
 		}
 	}

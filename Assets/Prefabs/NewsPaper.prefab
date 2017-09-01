@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114145824102046822}
   - component: {fileID: 114189891523449486}
   - component: {fileID: 136750493461395308}
+  - component: {fileID: 65516014064080092}
   m_Layer: 8
   m_Name: NewsPaper
   m_TagString: Untagged
@@ -43,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1762370064785784}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69938, y: 0.59986, z: 1.5546968}
+  m_LocalPosition: {x: 0.0017930269, y: 1.719, z: 2.2120705}
   m_LocalScale: {x: 3.046504, y: 13.99962, z: 3.0465045}
   m_Children: []
   m_Father: {fileID: 0}
@@ -117,6 +118,18 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: b4b531ee21288364a8854c5989adc5b4, type: 3}
+--- !u!65 &65516014064080092
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762370064785784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021643272, y: 0.023849498, z: 0.0252353}
+  m_Center: {x: -0.0051516364, y: -0.00043109694, z: 0.0005508628}
 --- !u!114 &114145824102046822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,10 +210,8 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114884233908038938, guid: 0f2631d3285eac14fae28649498d0ed0,
-    type: 2}
-  secondaryGrabActionScript: {fileID: 114987214863466026, guid: 0f2631d3285eac14fae28649498d0ed0,
-    type: 2}
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
   isUsable: 0
   holdButtonToUse: 1
   useOnlyIfGrabbed: 0
@@ -217,7 +228,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.014570884
-  m_Height: 0.021395635
+  m_Radius: 0.015
+  m_Height: 0.027
   m_Direction: 1
   m_Center: {x: -0.0014023688, y: -0.0013089553, z: -0.0000000023283067}
