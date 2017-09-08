@@ -15,8 +15,8 @@ public class BagContents : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (headStart == null) {
-			print (head.transform.position.x);
+		Vector3 currentHead = head.transform.position;
+		if (Vector3.Distance(new Vector3(0,0,0), headStart) < 0.1f && Vector3.Distance(new Vector3(0,0,0), currentHead) > 0.5f) {
 			headStart = head.transform.localPosition;
 		}
 		setPosition ();
@@ -35,5 +35,9 @@ public class BagContents : MonoBehaviour {
 				newsPaperInBag.transform.localPosition = gameObject.transform.position + newsPaperOffset;
 			}
 		}
+	}
+
+	public Vector3 getHeadPosition() {
+		return head.transform.position;
 	}
 }
